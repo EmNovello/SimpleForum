@@ -1,0 +1,36 @@
+#Che cos'è qyesta app?
+
+name: forum_flutter
+description: Flutter forum
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.14.0'
+
+dependencies:
+  universal_html: ^2.2.3
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  date_format: ^2.0.0
+  intl: ^0.17.0
+  keycloak_flutter: ^0.0.20
+  font_awesome_flutter: ^9.2.0
+  http: ^0.13.1
+  url_launcher: ^6.0.17
+  jwt_decode: ^0.3.1
+  cupertino_icons: ^1.0.2
+  email_validator: '^2.1.16'
+  time_machine: 0.9.17
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/undraw_Meeting_re_i53h.png

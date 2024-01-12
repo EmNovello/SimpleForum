@@ -1,0 +1,1052 @@
+2023-05-28 23:47:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MIGRATION_MODEL" not found (this database is empty); SQL statement:
+SELECT ID, VERSION FROM MIGRATION_MODEL ORDER BY UPDATE_TIME DESC [42104-214]
+2023-05-28 23:47:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOG" not found (this database is empty); SQL statement:
+SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG [42104-214]
+2023-05-28 23:47:49 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOGLOCK" not found (this database is empty); SQL statement:
+SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK [42104-214]
+2023-05-28 23:47:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOG" not found; SQL statement:
+SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG [42102-214]
+2023-06-08 23:22:28 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@23a60ea1 failed; length 4096 at 8192 [2.1.214/2]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.write(MVStore.java:1271)
+	at org.h2.mvstore.MVStore.storeBuffer(MVStore.java:1750)
+	at org.h2.mvstore.MVStore.lambda$serializeAndStore$5(MVStore.java:1600)
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1550)
+	at org.h2.mvstore.MVStore.serializeAndStore(MVStore.java:1600)
+	at org.h2.mvstore.MVStore.lambda$storeNow$4(MVStore.java:1518)
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1550)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1517)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1496)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1469)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1458)
+	at org.h2.mvstore.tx.TransactionStore.endTransaction(TransactionStore.java:633)
+	at org.h2.mvstore.tx.Transaction.commit(Transaction.java:511)
+	at org.h2.engine.SessionLocal.commit(SessionLocal.java:672)
+	at org.h2.engine.Database.<init>(Database.java:376)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@23a60ea1 failed; length 4096 at 8192 [2.1.214/2]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 34 more
+Caused by: org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@23a60ea1 failed; length 4096 at 8192 [2.1.214/2]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.writeFully(DataUtils.java:493)
+	at org.h2.mvstore.FileStore.writeFully(FileStore.java:113)
+	at org.h2.mvstore.MVStore.write(MVStore.java:1269)
+	... 28 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.FileChannelImpl.ensureOpen(FileChannelImpl.java:165)
+	at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:994)
+	at org.h2.mvstore.DataUtils.writeFully(DataUtils.java:489)
+	... 30 more
+2023-06-09 19:49:24 database: CREATE CACHED TABLE "PUBLIC"."COMPOSITE_ROLE"(
+    "COMPOSITE" CHARACTER VARYING(36) NOT NULL,
+    "CHILD_ROLE" CHARACTER VARYING(36) NOT NULL
+)
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."COMPOSITE_ROLE"(
+    "COMPOSITE" CHARACTER VARYING(36) NOT NULL,
+    "CHILD_ROLE" CHARACTER VARYING(36) NOT NULL
+) [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.createTable(Store.java:223)
+	at org.h2.schema.Schema.createTable(Schema.java:776)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:660)
+	at org.h2.engine.Database.executeMeta(Database.java:634)
+	at org.h2.engine.Database.<init>(Database.java:357)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@61530cea failed at 1615902 (length -1), read 0, remaining 96 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:658)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:643)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:702)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:648)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:219)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 34 more
+2023-06-09 19:49:24 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.createTable(Store.java:223)
+	at org.h2.schema.Schema.createTable(Schema.java:776)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:660)
+	at org.h2.engine.Database.executeMeta(Database.java:634)
+	at org.h2.engine.Database.<init>(Database.java:357)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."COMPOSITE_ROLE"(
+    "COMPOSITE" CHARACTER VARYING(36) NOT NULL,
+    "CHILD_ROLE" CHARACTER VARYING(36) NOT NULL
+) [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 23 more
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@61530cea failed at 1615902 (length -1), read 0, remaining 96 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:658)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:643)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:702)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:648)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:219)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 34 more
+2023-06-17 18:48:43 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: Could not open file C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db [2.1.214/1]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: Could not open file C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db [2.1.214/1]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 23 more
+Caused by: org.h2.mvstore.MVStoreException: Could not open file C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:185)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	... 17 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.size(FileChannelImpl.java:436)
+	at org.h2.mvstore.FileStore.open(FileStore.java:182)
+	... 19 more
+2023-06-17 18:48:43 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.<init>(Store.java:145)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 18 more
+Caused by: org.h2.mvstore.MVStoreException: Could not open file C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:185)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	... 15 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.size(FileChannelImpl.java:436)
+	at org.h2.mvstore.FileStore.open(FileStore.java:182)
+	... 19 more
+2023-06-17 18:48:43 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: Error opening database: "Sleep interrupted" [8000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.store.FileLock.getExceptionFatal(FileLock.java:429)
+	at org.h2.store.FileLock.sleep(FileLock.java:424)
+	at org.h2.store.FileLock.lockFile(FileLock.java:334)
+	at org.h2.store.FileLock.lock(FileLock.java:110)
+	at org.h2.engine.Database.<init>(Database.java:315)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Error opening database: "Sleep interrupted" [8000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:504)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 20 more
+Caused by: java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep0(Native Method)
+	at java.base/java.lang.Thread.sleep(Thread.java:465)
+	at org.h2.store.FileLock.sleep(FileLock.java:422)
+	... 17 more
+2023-06-19 22:19:12 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: Error opening database: "Sleep interrupted" [8000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.store.FileLock.getExceptionFatal(FileLock.java:429)
+	at org.h2.store.FileLock.sleep(FileLock.java:424)
+	at org.h2.store.FileLock.lockFile(FileLock.java:324)
+	at org.h2.store.FileLock.lock(FileLock.java:110)
+	at org.h2.engine.Database.<init>(Database.java:315)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Error opening database: "Sleep interrupted" [8000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:504)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 20 more
+Caused by: java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep0(Native Method)
+	at java.base/java.lang.Thread.sleep(Thread.java:465)
+	at org.h2.store.FileLock.sleep(FileLock.java:422)
+	... 17 more
+2023-06-19 22:49:38 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: Could not open file C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db [2.1.214/1]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: Could not open file C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db [2.1.214/1]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 23 more
+Caused by: org.h2.mvstore.MVStoreException: Could not open file C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:185)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	... 17 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.size(FileChannelImpl.java:436)
+	at org.h2.mvstore.FileStore.open(FileStore.java:182)
+	... 19 more
+2023-06-19 22:49:38 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.<init>(Store.java:145)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 18 more
+Caused by: org.h2.mvstore.MVStoreException: Could not open file C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:185)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	... 15 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.size(FileChannelImpl.java:436)
+	at org.h2.mvstore.FileStore.open(FileStore.java:182)
+	... 19 more
+2023-06-19 22:49:38 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: Error opening database: "Sleep interrupted" [8000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.store.FileLock.getExceptionFatal(FileLock.java:429)
+	at org.h2.store.FileLock.sleep(FileLock.java:424)
+	at org.h2.store.FileLock.lockFile(FileLock.java:334)
+	at org.h2.store.FileLock.lock(FileLock.java:110)
+	at org.h2.engine.Database.<init>(Database.java:315)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Error opening database: "Sleep interrupted" [8000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:504)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 20 more
+Caused by: java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep0(Native Method)
+	at java.base/java.lang.Thread.sleep(Thread.java:465)
+	at org.h2.store.FileLock.sleep(FileLock.java:422)
+	... 17 more
+2023-06-20 14:27:53 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.<init>(Store.java:145)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 18 more
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@49d9da6f failed at 1279244 (length -1), read 0, remaining 384 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.Page$NonLeaf.getChildPage(Page.java:1125)
+	at org.h2.mvstore.Cursor.hasNext(Cursor.java:64)
+	at org.h2.mvstore.MVStore.scrubMetaMap(MVStore.java:546)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:480)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	... 15 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 25 more
+2023-06-21 08:56:57 database: CREATE CACHED TABLE "PUBLIC"."REALM"(
+    "ID" CHARACTER VARYING(36) NOT NULL,
+    "ACCESS_CODE_LIFESPAN" INTEGER,
+    "USER_ACTION_LIFESPAN" INTEGER,
+    "ACCESS_TOKEN_LIFESPAN" INTEGER,
+    "ACCOUNT_THEME" CHARACTER VARYING(255),
+    "ADMIN_THEME" CHARACTER VARYING(255),
+    "EMAIL_THEME" CHARACTER VARYING(255),
+    "ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "EVENTS_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "EVENTS_EXPIRATION" BIGINT,
+    "LOGIN_THEME" CHARACTER VARYING(255),
+    "NAME" CHARACTER VARYING(255),
+    "NOT_BEFORE" INTEGER,
+    "PASSWORD_POLICY" CHARACTER VARYING(2550),
+    "REGISTRATION_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "REMEMBER_ME" BOOLEAN DEFAULT FALSE NOT NULL,
+    "RESET_PASSWORD_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "SOCIAL" BOOLEAN DEFAULT FALSE NOT NULL,
+    "SSL_REQUIRED" CHARACTER VARYING(255),
+    "SSO_IDLE_TIMEOUT" INTEGER,
+    "SSO_MAX_LIFESPAN" INTEGER,
+    "UPDATE_PROFILE_ON_SOC_LOGIN" BOOLEAN DEFAULT FALSE NOT NULL,
+    "VERIFY_EMAIL" BOOLEAN DEFAULT FALSE NOT NULL,
+    "MASTER_ADMIN_CLIENT" CHARACTER VARYING(36),
+    "LOGIN_LIFESPAN" INTEGER,
+    "INTERNATIONALIZATION_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "DEFAULT_LOCALE" CHARACTER VARYING(255),
+    "REG_EMAIL_AS_USERNAME" BOOLEAN DEFAULT FALSE NOT NULL,
+    "ADMIN_EVENTS_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "ADMIN_EVENTS_DETAILS_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "EDIT_USERNAME_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "OTP_POLICY_COUNTER" INTEGER DEFAULT 0,
+    "OTP_POLICY_WINDOW" INTEGER DEFAULT 1,
+    "OTP_POLICY_PERIOD" INTEGER DEFAULT 30,
+    "OTP_POLICY_DIGITS" INTEGER DEFAULT 6,
+    "OTP_POLICY_ALG" CHARACTER VARYING(36) DEFAULT 'HmacSHA1',
+    "OTP_POLICY_TYPE" CHARACTER VARYING(36) DEFAULT 'totp',
+    "BROWSER_FLOW" CHARACTER VARYING(36),
+    "REGISTRATION_FLOW" CHARACTER VARYING(36),
+    "DIRECT_GRANT_FLOW" CHARACTER VARYING(36),
+    "RESET_CREDENTIALS_FLOW" CHARACTER VARYING(36),
+    "CLIENT_AUTH_FLOW" CHARACTER VARYING(36),
+    "OFFLINE_SESSION_IDLE_TIMEOUT" INTEGER DEFAULT 0,
+    "REVOKE_REFRESH_TOKEN" BOOLEAN DEFAULT FALSE NOT NULL,
+    "ACCESS_TOKEN_LIFE_IMPLICIT" INTEGER DEFAULT 0,
+    "LOGIN_WITH_EMAIL_ALLOWED" BOOLEAN DEFAULT TRUE NOT NULL,
+    "DUPLICATE_EMAILS_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "DOCKER_AUTH_FLOW" CHARACTER VARYING(36),
+    "REFRESH_TOKEN_MAX_REUSE" INTEGER DEFAULT 0,
+    "ALLOW_USER_MANAGED_ACCESS" BOOLEAN DEFAULT FALSE NOT NULL,
+    "SSO_MAX_LIFESPAN_REMEMBER_ME" INTEGER DEFAULT 0 NOT NULL,
+    "SSO_IDLE_TIMEOUT_REMEMBER_ME" INTEGER DEFAULT 0 NOT NULL,
+    "DEFAULT_ROLE" CHARACTER VARYING(255)
+)
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."REALM"(
+    "ID" CHARACTER VARYING(36) NOT NULL,
+    "ACCESS_CODE_LIFESPAN" INTEGER,
+    "USER_ACTION_LIFESPAN" INTEGER,
+    "ACCESS_TOKEN_LIFESPAN" INTEGER,
+    "ACCOUNT_THEME" CHARACTER VARYING(255),
+    "ADMIN_THEME" CHARACTER VARYING(255),
+    "EMAIL_THEME" CHARACTER VARYING(255),
+    "ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "EVENTS_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "EVENTS_EXPIRATION" BIGINT,
+    "LOGIN_THEME" CHARACTER VARYING(255),
+    "NAME" CHARACTER VARYING(255),
+    "NOT_BEFORE" INTEGER,
+    "PASSWORD_POLICY" CHARACTER VARYING(2550),
+    "REGISTRATION_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "REMEMBER_ME" BOOLEAN DEFAULT FALSE NOT NULL,
+    "RESET_PASSWORD_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "SOCIAL" BOOLEAN DEFAULT FALSE NOT NULL,
+    "SSL_REQUIRED" CHARACTER VARYING(255),
+    "SSO_IDLE_TIMEOUT" INTEGER,
+    "SSO_MAX_LIFESPAN" INTEGER,
+    "UPDATE_PROFILE_ON_SOC_LOGIN" BOOLEAN DEFAULT FALSE NOT NULL,
+    "VERIFY_EMAIL" BOOLEAN DEFAULT FALSE NOT NULL,
+    "MASTER_ADMIN_CLIENT" CHARACTER VARYING(36),
+    "LOGIN_LIFESPAN" INTEGER,
+    "INTERNATIONALIZATION_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "DEFAULT_LOCALE" CHARACTER VARYING(255),
+    "REG_EMAIL_AS_USERNAME" BOOLEAN DEFAULT FALSE NOT NULL,
+    "ADMIN_EVENTS_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "ADMIN_EVENTS_DETAILS_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "EDIT_USERNAME_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "OTP_POLICY_COUNTER" INTEGER DEFAULT 0,
+    "OTP_POLICY_WINDOW" INTEGER DEFAULT 1,
+    "OTP_POLICY_PERIOD" INTEGER DEFAULT 30,
+    "OTP_POLICY_DIGITS" INTEGER DEFAULT 6,
+    "OTP_POLICY_ALG" CHARACTER VARYING(36) DEFAULT 'HmacSHA1',
+    "OTP_POLICY_TYPE" CHARACTER VARYING(36) DEFAULT 'totp',
+    "BROWSER_FLOW" CHARACTER VARYING(36),
+    "REGISTRATION_FLOW" CHARACTER VARYING(36),
+    "DIRECT_GRANT_FLOW" CHARACTER VARYING(36),
+    "RESET_CREDENTIALS_FLOW" CHARACTER VARYING(36),
+    "CLIENT_AUTH_FLOW" CHARACTER VARYING(36),
+    "OFFLINE_SESSION_IDLE_TIMEOUT" INTEGER DEFAULT 0,
+    "REVOKE_REFRESH_TOKEN" BOOLEAN DEFAULT FALSE NOT NULL,
+    "ACCESS_TOKEN_LIFE_IMPLICIT" INTEGER DEFAULT 0,
+    "LOGIN_WITH_EMAIL_ALLOWED" BOOLEAN DEFAULT TRUE NOT NULL,
+    "DUPLICATE_EMAILS_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "DOCKER_AUTH_FLOW" CHARACTER VARYING(36),
+    "REFRESH_TOKEN_MAX_REUSE" INTEGER DEFAULT 0,
+    "ALLOW_USER_MANAGED_ACCESS" BOOLEAN DEFAULT FALSE NOT NULL,
+    "SSO_MAX_LIFESPAN_REMEMBER_ME" INTEGER DEFAULT 0 NOT NULL,
+    "SSO_IDLE_TIMEOUT_REMEMBER_ME" INTEGER DEFAULT 0 NOT NULL,
+    "DEFAULT_ROLE" CHARACTER VARYING(255)
+) [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.createTable(Store.java:223)
+	at org.h2.schema.Schema.createTable(Schema.java:776)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:660)
+	at org.h2.engine.Database.executeMeta(Database.java:634)
+	at org.h2.engine.Database.<init>(Database.java:357)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@3bbfc673 failed at 1013259 (length -1), read 0, remaining 1024 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:658)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:643)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:702)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:648)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:219)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 34 more
+2023-06-21 08:56:57 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.createTable(Store.java:223)
+	at org.h2.schema.Schema.createTable(Schema.java:776)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:660)
+	at org.h2.engine.Database.executeMeta(Database.java:634)
+	at org.h2.engine.Database.<init>(Database.java:357)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."REALM"(
+    "ID" CHARACTER VARYING(36) NOT NULL,
+    "ACCESS_CODE_LIFESPAN" INTEGER,
+    "USER_ACTION_LIFESPAN" INTEGER,
+    "ACCESS_TOKEN_LIFESPAN" INTEGER,
+    "ACCOUNT_THEME" CHARACTER VARYING(255),
+    "ADMIN_THEME" CHARACTER VARYING(255),
+    "EMAIL_THEME" CHARACTER VARYING(255),
+    "ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "EVENTS_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "EVENTS_EXPIRATION" BIGINT,
+    "LOGIN_THEME" CHARACTER VARYING(255),
+    "NAME" CHARACTER VARYING(255),
+    "NOT_BEFORE" INTEGER,
+    "PASSWORD_POLICY" CHARACTER VARYING(2550),
+    "REGISTRATION_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "REMEMBER_ME" BOOLEAN DEFAULT FALSE NOT NULL,
+    "RESET_PASSWORD_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "SOCIAL" BOOLEAN DEFAULT FALSE NOT NULL,
+    "SSL_REQUIRED" CHARACTER VARYING(255),
+    "SSO_IDLE_TIMEOUT" INTEGER,
+    "SSO_MAX_LIFESPAN" INTEGER,
+    "UPDATE_PROFILE_ON_SOC_LOGIN" BOOLEAN DEFAULT FALSE NOT NULL,
+    "VERIFY_EMAIL" BOOLEAN DEFAULT FALSE NOT NULL,
+    "MASTER_ADMIN_CLIENT" CHARACTER VARYING(36),
+    "LOGIN_LIFESPAN" INTEGER,
+    "INTERNATIONALIZATION_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "DEFAULT_LOCALE" CHARACTER VARYING(255),
+    "REG_EMAIL_AS_USERNAME" BOOLEAN DEFAULT FALSE NOT NULL,
+    "ADMIN_EVENTS_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "ADMIN_EVENTS_DETAILS_ENABLED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "EDIT_USERNAME_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "OTP_POLICY_COUNTER" INTEGER DEFAULT 0,
+    "OTP_POLICY_WINDOW" INTEGER DEFAULT 1,
+    "OTP_POLICY_PERIOD" INTEGER DEFAULT 30,
+    "OTP_POLICY_DIGITS" INTEGER DEFAULT 6,
+    "OTP_POLICY_ALG" CHARACTER VARYING(36) DEFAULT 'HmacSHA1',
+    "OTP_POLICY_TYPE" CHARACTER VARYING(36) DEFAULT 'totp',
+    "BROWSER_FLOW" CHARACTER VARYING(36),
+    "REGISTRATION_FLOW" CHARACTER VARYING(36),
+    "DIRECT_GRANT_FLOW" CHARACTER VARYING(36),
+    "RESET_CREDENTIALS_FLOW" CHARACTER VARYING(36),
+    "CLIENT_AUTH_FLOW" CHARACTER VARYING(36),
+    "OFFLINE_SESSION_IDLE_TIMEOUT" INTEGER DEFAULT 0,
+    "REVOKE_REFRESH_TOKEN" BOOLEAN DEFAULT FALSE NOT NULL,
+    "ACCESS_TOKEN_LIFE_IMPLICIT" INTEGER DEFAULT 0,
+    "LOGIN_WITH_EMAIL_ALLOWED" BOOLEAN DEFAULT TRUE NOT NULL,
+    "DUPLICATE_EMAILS_ALLOWED" BOOLEAN DEFAULT FALSE NOT NULL,
+    "DOCKER_AUTH_FLOW" CHARACTER VARYING(36),
+    "REFRESH_TOKEN_MAX_REUSE" INTEGER DEFAULT 0,
+    "ALLOW_USER_MANAGED_ACCESS" BOOLEAN DEFAULT FALSE NOT NULL,
+    "SSO_MAX_LIFESPAN_REMEMBER_ME" INTEGER DEFAULT 0 NOT NULL,
+    "SSO_IDLE_TIMEOUT_REMEMBER_ME" INTEGER DEFAULT 0 NOT NULL,
+    "DEFAULT_ROLE" CHARACTER VARYING(255)
+) [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 23 more
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@3bbfc673 failed at 1013259 (length -1), read 0, remaining 1024 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:658)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:643)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:702)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:648)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:219)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 34 more
+2023-06-22 09:14:25 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.createTable(Store.java:223)
+	at org.h2.schema.Schema.createTable(Schema.java:776)
+	at org.h2.engine.Database.<init>(Database.java:351)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@7d6be18f failed at 693653 (length -1), read 0, remaining 3072 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.Page$NonLeaf.getChildPage(Page.java:1125)
+	at org.h2.mvstore.CursorPos.traverseDown(CursorPos.java:61)
+	at org.h2.mvstore.MVMap.operate(MVMap.java:1770)
+	at org.h2.mvstore.MVMap.putIfAbsent(MVMap.java:530)
+	at org.h2.mvstore.tx.TransactionStore$TxMapBuilder.registerDataType(TransactionStore.java:859)
+	at org.h2.mvstore.tx.TransactionStore$TxMapBuilder.create(TransactionStore.java:884)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:699)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:648)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:219)
+	... 16 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 34 more
+2023-06-25 15:01:07 database: CREATE CACHED TABLE "PUBLIC"."REALM_EVENTS_LISTENERS"(
+    "REALM_ID" CHARACTER VARYING(36) NOT NULL,
+    "VALUE" CHARACTER VARYING(255) NOT NULL
+)
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."REALM_EVENTS_LISTENERS"(
+    "REALM_ID" CHARACTER VARYING(36) NOT NULL,
+    "VALUE" CHARACTER VARYING(255) NOT NULL
+) [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.createTable(Store.java:223)
+	at org.h2.schema.Schema.createTable(Schema.java:776)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:660)
+	at org.h2.engine.Database.executeMeta(Database.java:634)
+	at org.h2.engine.Database.<init>(Database.java:357)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@31a0103d failed at 910856 (length -1), read 0, remaining 128 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:658)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:643)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:702)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:648)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:219)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 34 more
+2023-06-25 15:01:07 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.createTable(Store.java:223)
+	at org.h2.schema.Schema.createTable(Schema.java:776)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:660)
+	at org.h2.engine.Database.executeMeta(Database.java:634)
+	at org.h2.engine.Database.<init>(Database.java:357)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."REALM_EVENTS_LISTENERS"(
+    "REALM_ID" CHARACTER VARYING(36) NOT NULL,
+    "VALUE" CHARACTER VARYING(255) NOT NULL
+) [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 23 more
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@31a0103d failed at 910856 (length -1), read 0, remaining 128 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:658)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:643)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:702)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:648)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:219)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 34 more
+2023-07-06 09:37:34 database: CREATE CACHED TABLE "PUBLIC"."RESOURCE_SERVER_POLICY"(
+    "ID" CHARACTER VARYING(36) NOT NULL,
+    "NAME" CHARACTER VARYING(255) NOT NULL,
+    "DESCRIPTION" CHARACTER VARYING(255),
+    "TYPE" CHARACTER VARYING(255) NOT NULL,
+    "DECISION_STRATEGY" TINYINT,
+    "LOGIC" TINYINT,
+    "RESOURCE_SERVER_ID" CHARACTER VARYING(36) NOT NULL,
+    "OWNER" CHARACTER VARYING(255)
+)
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."RESOURCE_SERVER_POLICY"(
+    "ID" CHARACTER VARYING(36) NOT NULL,
+    "NAME" CHARACTER VARYING(255) NOT NULL,
+    "DESCRIPTION" CHARACTER VARYING(255),
+    "TYPE" CHARACTER VARYING(255) NOT NULL,
+    "DECISION_STRATEGY" TINYINT,
+    "LOGIC" TINYINT,
+    "RESOURCE_SERVER_ID" CHARACTER VARYING(36) NOT NULL,
+    "OWNER" CHARACTER VARYING(255)
+) [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.createTable(Store.java:223)
+	at org.h2.schema.Schema.createTable(Schema.java:776)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:660)
+	at org.h2.engine.Database.executeMeta(Database.java:634)
+	at org.h2.engine.Database.<init>(Database.java:357)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@3bbfc673 failed at 1124205 (length -1), read 0, remaining 384 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:658)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:643)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:702)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:648)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:219)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 34 more
+2023-07-06 09:37:34 database: opening C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db" [90028-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:171)
+	at org.h2.mvstore.db.Store.createTable(Store.java:223)
+	at org.h2.schema.Schema.createTable(Schema.java:776)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:660)
+	at org.h2.engine.Database.executeMeta(Database.java:634)
+	at org.h2.engine.Database.<init>(Database.java:357)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/asus/OneDrive/Desktop/Piattaforme/keycloak-21.1.1/keycloak-21.1.1/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."RESOURCE_SERVER_POLICY"(
+    "ID" CHARACTER VARYING(36) NOT NULL,
+    "NAME" CHARACTER VARYING(255) NOT NULL,
+    "DESCRIPTION" CHARACTER VARYING(255),
+    "TYPE" CHARACTER VARYING(255) NOT NULL,
+    "DECISION_STRATEGY" TINYINT,
+    "LOGIC" TINYINT,
+    "RESOURCE_SERVER_ID" CHARACTER VARYING(36) NOT NULL,
+    "OWNER" CHARACTER VARYING(255)
+) [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 23 more
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@3bbfc673 failed at 1124205 (length -1), read 0, remaining 384 [2.1.214/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:470)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:422)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:2569)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:633)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:658)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:643)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:702)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:648)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:219)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:177)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:984)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:956)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:456)
+	... 34 more

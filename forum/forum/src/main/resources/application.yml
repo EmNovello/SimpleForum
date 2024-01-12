@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: forum
+  datasource:
+    username: sa
+    password: sqlpass
+    url: jdbc:sqlserver://localhost;databaseName=forum;encrypt=true;trustServerCertificate=true
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+pageSize: 9
+
+server:
+  port: 8081
+
+keycloak:
+  realm: ForumRealm
+  auth-server-url: http://localhost:8080
+  resource: ForumClient
+  public-client: true
+  bearer-only: true
+
+custom-properties:
+  client-secret: LFfoHpAGcdSWaiFFMtPo7PmCgmdh21C4
+  admin-username: admin
+  admin-password: keypass
+
