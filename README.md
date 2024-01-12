@@ -8,11 +8,17 @@ Developed as a university project for a web application and in order to pass an 
 
 # Technologies
 [Flutter] User Interface Toolkit: Version 3.10.5 (https://docs.flutter.dev/)
+
 [Maven] Project Management
+
 [Spring] Framework: Version 2.7.12
+
 [Java] Language: Version 17
+
 [Keycloak] Identity and Access Management: Version 21.1.1 (https://www.keycloak.org/documentation)
+
 [SQL Server Management Studio (SSMS)] SQL Infrastructure Management: Version 19.0.2
+
 [IntelliJ IDEA] Development Environment (https://www.jetbrains.com/idea/)
 ***
 
