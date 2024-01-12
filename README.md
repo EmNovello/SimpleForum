@@ -1,33 +1,22 @@
 # Super basic forum
-
-Forum dove è possibile creare un numero indefinito di post, rappresentanti un topic (Film, libri, etc.) da fare valutare. Per ciascun post è possibile aggiungere una valutazione personale.
-E' possibile sia registrarsi che loggare al forum.
+A forum where it's possible to create an indefinite number of posts, representing a topic (Movies, Books, etc.) to be evaluated. For each post, it's possible to add a personal rating. Users can both register and log in to the forum.
 ***
 
-# Motivazione
-
-Realizzato come progettino universitario di una applicazione web ed al fine del conseguimento d'un esame.
+# Motivation
+Developed as a university project for a web application and in order to pass an exam.
 ***
 
-# Tecnologie
-
-* [Flutter] Toolkit per l'interfaccia utente: Version 3.10.5 (https://docs.flutter.dev/)
-* [Maven] Gestione del progetto 
-* [Spring] Framework: Version 2.7.12 
-* [Java] Linguaggio: Version 17
-* [Keycloak] Gestione delle identità e degli accessi: Version 21.1.1 (https://www.keycloak.org/documentation)
-* [SQL Server Management Studio (SSMS)] Gestione di infrastruttura SQL: Version 19.0.2 
-
-* [Intelligent IDEA] Ambiente di sviluppo (https://www.jetbrains.com/idea/)
+# Technologies
+[Flutter] User Interface Toolkit: Version 3.10.5 (https://docs.flutter.dev/)
+[Maven] Project Management
+[Spring] Framework: Version 2.7.12
+[Java] Language: Version 17
+[Keycloak] Identity and Access Management: Version 21.1.1 (https://www.keycloak.org/documentation)
+[SQL Server Management Studio (SSMS)] SQL Infrastructure Management: Version 19.0.2
+[IntelliJ IDEA] Development Environment (https://www.jetbrains.com/idea/)
 ***
 
-# Come ottenerlo
+# How to Get It
+Open the terminal. Navigate to the destination folder. Inside the destination folder, run the following command:
 
-Apri il terminale.
-Spostati all'interno della cartella di destinazione.
-All'interno della cartella di destinazione eseguire il comando:
-
-```
 git clone https://gitlab.com/EmaNovello/basic-forum-project.git
-
-
